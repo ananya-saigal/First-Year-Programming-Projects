@@ -1,0 +1,168 @@
+from typing import List, Dict
+import datetime as dt
+import pickle
+
+class Person:
+    def __init__(self, name: str, age: int,
+                 gender: str) -> None:
+        """Initializes a person class
+
+        Args:
+            name: The name of the person
+            age: The age of the person
+            gender: The gender of the person
+        """
+        self.name = name
+        self.age = age
+        self.gender = gender
+    
+
+class Student(Person):
+    def __init__(self, name: str, age: int, gender: str,
+                 student_number: int, grade: int) -> None:
+        """Initializes the student class
+
+        Args:
+            name: The name of the student
+            age: The age of the student
+            gender: The gender of the student
+            student_number: The student number
+            grade: The grade the student is in
+        """
+        super().__init__(name, age, gender)
+        self.student_number = student_number
+        self.grade = grade
+        self.attendance: Dict[dt.date: str] = {}
+    
+    def mark_present(self, date: dt.date) -> None:
+        """Mark a student present at certain date
+        
+        Args:
+            date: The date to mark the student
+        """
+        #> GREEN COLOR
+        self.attendance[date] = "PRESENT"
+    
+    def mark_absent(self, date: dt.date):
+        """Mark a student absent at certain date
+        
+        Args: 
+            date: The date to mark the student
+        """
+        #> RED COLOR
+        self.attendance[date] = "ABSENT"
+    
+    def mark_late(self, date: dt.date):
+        """Mark a student late at certain date
+        
+        Args:
+            date: The date to mark the student
+        """
+        #> YELLOW COLOR
+        self.attendance[date] = "LATE"
+    
+    def get_student_attendance(self):
+        """Return the attendance of a student
+        
+        Return:
+            The attendence of a student
+        """
+        return self.attendance
+    
+
+class Classroom:
+    
+    def __init__(self,subject_name:str) -> None:
+        """Initializes the Classroom class
+
+        Args:
+            subject_name : The name of the subject
+        """
+        self._subject= subject_name
+        self.student = []
+
+    def absent(self, student, date=dt.date.today()):
+        """Check students that are absent
+        
+        Args:
+            student: A student to be marked
+            date: The date to mark the student
+        """
+        student.mark_absent(date)
+    
+    def present(self, student, date=dt.date.today()):
+        """Check students that are present
+        
+        Args:
+            student: A student to be marked
+            date: The date to mark the student        
+        """
+        student.mark_present(date)
+    
+    def late(self, student, date=dt.date.today()):
+        """Check students that are late
+        
+        Args:
+            student: A student to be marked
+            date: The date to mark the student        
+        """
+        student.mark_late(date)
+    
+    def view_students(self):
+        """Return student list of attendance
+        
+        Return:
+            The list of the students
+        """
+        return self.student
+     
+    def add_student(self, name):
+        """Add student to student list
+        
+        Return:
+            Appended list of the student added
+        """
+        self.student.append(name)
+    
+    def __str__(self):
+        return f"{self._subject}"
+
+class Teacher(Person):
+    all_teacher = []
+    
+    def __init__(self, name: str, age: int,
+                 gender: str) -> None:
+        """Initialize the Teacher class
+
+        Args:
+            name : The Name of the teacher
+            age : The age of the teacher
+            gender: The gender of the teacher
+        """
+        super().__init__(name, age, gender)
+        self.__class__.all_teacher.append(self)
+        self.list_of_classes: List[Classroom] = []
+    
+    def get_class(self):
+        """Return the list of classes"""
+        return self.list_of_classes
+
+    def add_classroom(self, subject_name: str):
+        """Add classroom to the list of the classes
+        
+        Args:
+            classroom: The classroom
+        """
+        self.list_of_classes.append(Classroom(subject_name))
+    
+    def __str__(self):
+        return self.name
+    
+    def get_all_teachers(self):
+        return cls.all_teacher
+    
+    @classmethod
+    def save(cls) -> None:
+        fp = open("database.pkl", "wb")
+        pickle.dump(cls.all_teacher, fp)
+        fp.close()
