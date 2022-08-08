@@ -1,6 +1,5 @@
 """
 Markbook Application
-Group members: Rishabh, James, Ananya
 """
 import json
 from typing import Dict, Tuple
