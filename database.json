@@ -1,0 +1,129 @@
+{
+    "classes_list": [
+        {
+            "course_code": "ICS4U",
+            "course_name": "Computer Science",
+            "period": 2,
+            "teacher": "Mr. Gallo",
+            "student_list": [
+                {
+                    "first_name": "Rishabh",
+                    "last_name": "Sablok",
+                    "student_number": 734827384,
+                    "gender": "M",
+                    "image": "RishabhSablok734827384.jpg",
+                    "grade": 12,
+                    "email": "rishabh@rishabh.cn",
+                    "marks": [
+                        85.0,
+                        "Not Added",
+                        "Not Added"
+                    ],
+                    "comments": ""
+                },
+                {
+                    "first_name": "Ananya",
+                    "last_name": "Saigal",
+                    "student_number": 1838329,
+                    "gender": "F",
+                    "image": "AnanyaSaigal1838329.jpg",
+                    "grade": 12,
+                    "email": "def@gmail.com",
+                    "marks": [
+                        60.0,
+                        93.0,
+                        "Not Added"
+                    ],
+                    "comments": ""
+                },
+                {
+                    "first_name": "Someone",
+                    "last_name": "Random Person",
+                    "student_number": 8749283,
+                    "gender": "M",
+                    "image": "SomeoneRandom Person8749283.jpg",
+                    "grade": 12,
+                    "email": "abcdef@gmail.com",
+                    "marks": [
+                        99.0,
+                        "Not Added",
+                        "Not Added"
+                    ],
+                    "comments": ""
+                }
+            ],
+            "assignment_list": [
+                {
+                    "name": "Dictionary Assignment",
+                    "due": "Never",
+                    "points": 100
+                },
+                {
+                    "name": "Test",
+                    "due": "Today",
+                    "points": 91
+                },
+                {
+                    "name": "Wejaf",
+                    "due": "1212",
+                    "points": 1200
+                }
+            ]
+        }
+    ],
+    "all_students": [
+        {
+            "first_name": "ABC",
+            "last_name": "DEFKKJSf",
+            "student_number": 12857234,
+            "gender": "M",
+            "image": "ABCDEFKKJSf12857234.jpg",
+            "grade": 0,
+            "email": "abc@j.com",
+            "marks": [],
+            "comments": ""
+        },
+        {
+            "first_name": "Rishabh",
+            "last_name": "Sablok",
+            "student_number": 734827384,
+            "gender": "M",
+            "image": "RishabhSablok734827384.jpg",
+            "grade": 12,
+            "email": "abc@gmail.com",
+            "marks": [
+                85.0,
+                "Not Added"
+            ],
+            "comments": ""
+        },
+        {
+            "first_name": "Ananya",
+            "last_name": "Saigal",
+            "student_number": 1838329,
+            "gender": "F",
+            "image": "AnanyaSaigal1838329.jpg",
+            "grade": 12,
+            "email": "def@gmail.com",
+            "marks": [
+                60.0,
+                93.0
+            ],
+            "comments": ""
+        },
+        {
+            "first_name": "Someone",
+            "last_name": "Random Person",
+            "student_number": 8749283,
+            "gender": "M",
+            "image": "SomeoneRandom Person8749283.jpg",
+            "grade": 12,
+            "email": "abcdef@gmail.com",
+            "marks": [
+                99.0,
+                "Not Added"
+            ],
+            "comments": ""
+        }
+    ]
+}
