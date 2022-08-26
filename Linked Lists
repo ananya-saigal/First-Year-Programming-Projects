@@ -44,7 +44,11 @@ class LinkedList():
         head.next=None
         self.head=newHead
         return newHead             
-  
+def recurssive_print(head):
+      if head==None:
+         return "None"
+      else:
+         return f"{head.data} -->"+recurssive_print(head.next)  
 a=LinkedList()
 a.add_nodes_tail(5)
 a.add_nodes_tail(3)
